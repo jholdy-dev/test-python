@@ -161,7 +161,7 @@ export class Frontend extends TypeScriptAppProject {
         version: 1,
         newProjectRoot: 'projects',
         projects: {
-          'app-code': {
+          frontend: {
             projectType: 'application',
             schematics: {},
             root: '',
@@ -171,7 +171,7 @@ export class Frontend extends TypeScriptAppProject {
               build: {
                 builder: '@angular-devkit/build-angular:application',
                 options: {
-                  outputPath: 'dist/app-code',
+                  outputPath: 'dist/frontend',
                   index: 'src/index.html',
                   browser: 'src/main.ts',
                   polyfills: ['zone.js'],
@@ -208,10 +208,10 @@ export class Frontend extends TypeScriptAppProject {
                 builder: '@angular-devkit/build-angular:dev-server',
                 configurations: {
                   production: {
-                    buildTarget: 'app-code:build:production',
+                    buildTarget: 'frontend:build:production',
                   },
                   development: {
-                    buildTarget: 'app-code:build:development',
+                    buildTarget: 'frontend:build:development',
                   },
                 },
                 defaultConfiguration: 'development',
@@ -219,7 +219,7 @@ export class Frontend extends TypeScriptAppProject {
               'extract-i18n': {
                 builder: '@angular-devkit/build-angular:extract-i18n',
                 options: {
-                  buildTarget: 'app-code:build',
+                  buildTarget: 'frontend:build',
                 },
               },
               test: {
