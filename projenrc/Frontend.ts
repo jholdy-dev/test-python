@@ -153,7 +153,6 @@ export class Frontend extends TypeScriptAppProject {
       },
     });
 
-    this.tsconfigDev.include.push('.eslintrc.json');
     this.tsconfigDev.include.push('node_modules');
 
     new JsonFile(this, 'angular.json', {

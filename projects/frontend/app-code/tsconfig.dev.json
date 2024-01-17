@@ -38,7 +38,6 @@
   "include": [
     "src/**/*.ts",
     "./src/**/*.ts",
-    ".eslintrc.json",
     "node_modules"
   ],
   "exclude": [
