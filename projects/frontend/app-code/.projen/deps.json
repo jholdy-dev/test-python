@@ -1,32 +1,28 @@
 {
   "dependencies": [
     {
-      "name": "@testing-library/jest-dom",
+      "name": "@angular-devkit/build-angular",
+      "version": "^17.0.10",
       "type": "build"
     },
     {
-      "name": "@testing-library/react",
+      "name": "@angular/cli",
+      "version": "^17.0.10",
       "type": "build"
     },
     {
-      "name": "@testing-library/user-event",
+      "name": "@angular/compiler-cli",
+      "version": "^17.0.0",
       "type": "build"
     },
     {
-      "name": "@types/jest",
+      "name": "@types/jasmine",
+      "version": "~5.1.0",
       "type": "build"
     },
     {
       "name": "@types/node",
       "version": "^18",
-      "type": "build"
-    },
-    {
-      "name": "@types/react",
-      "type": "build"
-    },
-    {
-      "name": "@types/react-dom",
       "type": "build"
     },
     {
@@ -45,10 +41,6 @@
       "type": "build"
     },
     {
-      "name": "eslint-config-prettier",
-      "type": "build"
-    },
-    {
       "name": "eslint-import-resolver-typescript",
       "type": "build"
     },
@@ -57,16 +49,38 @@
       "type": "build"
     },
     {
-      "name": "eslint-plugin-prettier",
-      "type": "build"
-    },
-    {
       "name": "eslint",
       "version": "^8",
       "type": "build"
     },
     {
-      "name": "prettier",
+      "name": "jasmine-core",
+      "version": "~5.1.0",
+      "type": "build"
+    },
+    {
+      "name": "karma-chrome-launcher",
+      "version": "~3.2.0",
+      "type": "build"
+    },
+    {
+      "name": "karma-coverage",
+      "version": "~2.2.0",
+      "type": "build"
+    },
+    {
+      "name": "karma-jasmine-html-reporter",
+      "version": "~2.1.0",
+      "type": "build"
+    },
+    {
+      "name": "karma-jasmine",
+      "version": "~5.1.0",
+      "type": "build"
+    },
+    {
+      "name": "karma",
+      "version": "~6.4.0",
       "type": "build"
     },
     {
@@ -75,34 +89,62 @@
     },
     {
       "name": "typescript",
-      "version": "^4.0.3",
+      "version": "5.2.2",
       "type": "build"
     },
     {
-      "name": "@types/express-serve-static-core",
-      "version": "4.17.30",
-      "type": "override"
-    },
-    {
-      "name": "@types/express",
-      "version": "4.17.13",
-      "type": "override"
-    },
-    {
-      "name": "react",
+      "name": "@angular/animations",
+      "version": "^17.0.0",
       "type": "runtime"
     },
     {
-      "name": "react-dom",
+      "name": "@angular/common",
+      "version": "^17.0.0",
       "type": "runtime"
     },
     {
-      "name": "react-scripts",
-      "version": "^5",
+      "name": "@angular/compiler",
+      "version": "^17.0.0",
       "type": "runtime"
     },
     {
-      "name": "web-vitals",
+      "name": "@angular/core",
+      "version": "^17.0.0",
+      "type": "runtime"
+    },
+    {
+      "name": "@angular/forms",
+      "version": "^17.0.0",
+      "type": "runtime"
+    },
+    {
+      "name": "@angular/platform-browser-dynamic",
+      "version": "^17.0.0",
+      "type": "runtime"
+    },
+    {
+      "name": "@angular/platform-browser",
+      "version": "^17.0.0",
+      "type": "runtime"
+    },
+    {
+      "name": "@angular/router",
+      "version": "^17.0.0",
+      "type": "runtime"
+    },
+    {
+      "name": "rxjs",
+      "version": "~7.8.0",
+      "type": "runtime"
+    },
+    {
+      "name": "tslib",
+      "version": "^2.3.0",
+      "type": "runtime"
+    },
+    {
+      "name": "zone.js",
+      "version": "~0.14.2",
       "type": "runtime"
     }
   ],

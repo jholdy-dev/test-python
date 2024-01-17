@@ -2,17 +2,16 @@
 {
   "compilerOptions": {
     "alwaysStrict": true,
-    "declaration": true,
+    "declaration": false,
     "esModuleInterop": true,
     "experimentalDecorators": true,
     "inlineSourceMap": true,
     "inlineSources": true,
     "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
+      "ES2022",
+      "dom"
     ],
-    "module": "commonjs",
+    "module": "ES2022",
     "noEmitOnError": false,
     "noFallthroughCasesInSwitch": true,
     "noImplicitAny": true,
@@ -25,20 +24,22 @@
     "strictNullChecks": true,
     "strictPropertyInitialization": true,
     "stripInternal": true,
-    "target": "es5",
-    "allowJs": true,
-    "skipLibCheck": true,
-    "allowSyntheticDefaultImports": true,
+    "target": "ES2022",
+    "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
     "moduleResolution": "node",
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx"
+    "importHelpers": true,
+    "useDefineForClassFields": false
   },
   "include": [
     "src/**/*.ts",
-    "test/**/*.ts",
-    "src"
+    "./src/**/*.ts",
+    ".eslintrc.json",
+    "node_modules"
   ],
   "exclude": [
     "node_modules"

@@ -26,7 +26,8 @@
       "description": "Only compile",
       "steps": [
         {
-          "exec": "react-scripts build"
+          "exec": "ng build",
+          "receiveArgs": true
         }
       ]
     },
@@ -40,12 +41,12 @@
         }
       ]
     },
-    "dev": {
-      "name": "dev",
-      "description": "Starts the react application",
+    "e2e": {
+      "name": "e2e",
       "steps": [
         {
-          "exec": "react-scripts start"
+          "exec": "ng e2e",
+          "receiveArgs": true
         }
       ]
     },
@@ -54,7 +55,7 @@
       "description": "Runs eslint against the codebase",
       "steps": [
         {
-          "exec": "eslint --ext .ts,.tsx --fix --no-error-on-unmatched-pattern $@ projects/frontend test build-tools",
+          "exec": "eslint --ext .ts,.tsx --fix --no-error-on-unmatched-pattern $@ src ./src build-tools",
           "receiveArgs": true
         }
       ]
@@ -77,6 +78,24 @@
         }
       ]
     },
+    "ng": {
+      "name": "ng",
+      "steps": [
+        {
+          "exec": "ng",
+          "receiveArgs": true
+        }
+      ]
+    },
+    "ng:watch": {
+      "name": "ng:watch",
+      "steps": [
+        {
+          "exec": "ng build --watch --configuration development",
+          "receiveArgs": true
+        }
+      ]
+    },
     "package": {
       "name": "package",
       "description": "Creates the distribution package"
@@ -93,15 +112,22 @@
       "name": "pre-compile",
       "description": "Prepare the project for compilation"
     },
+    "start": {
+      "name": "start",
+      "steps": [
+        {
+          "exec": "ng serve",
+          "receiveArgs": true
+        }
+      ]
+    },
     "test": {
       "name": "test",
       "description": "Run tests",
       "steps": [
         {
-          "spawn": "eslint"
-        },
-        {
-          "exec": "react-scripts test --watchAll=false"
+          "exec": "ng test",
+          "receiveArgs": true
         }
       ]
     },
@@ -113,13 +139,13 @@
       },
       "steps": [
         {
-          "exec": "npx npm-check-updates@16 --upgrade --target=minor --peer --dep=dev,peer,prod,optional --filter=@testing-library/jest-dom,@testing-library/react,@testing-library/user-event,@types/jest,@types/node,@types/react,@types/react-dom,@typescript-eslint/eslint-plugin,@typescript-eslint/parser,constructs,eslint-config-prettier,eslint-import-resolver-typescript,eslint-plugin-import,eslint-plugin-prettier,eslint,prettier,projen,typescript,react,react-dom,react-scripts,web-vitals"
+          "exec": "npx npm-check-updates@16 --upgrade --target=minor --peer --dep=dev,peer,prod,optional --filter=@angular-devkit/build-angular,@angular/cli,@angular/compiler-cli,@types/node,@typescript-eslint/eslint-plugin,@typescript-eslint/parser,constructs,eslint-import-resolver-typescript,eslint-plugin-import,eslint,projen,@angular/animations,@angular/common,@angular/compiler,@angular/core,@angular/forms,@angular/platform-browser-dynamic,@angular/platform-browser,@angular/router,tslib"
         },
         {
           "exec": "yarn install --check-files"
         },
         {
-          "exec": "yarn upgrade @testing-library/jest-dom @testing-library/react @testing-library/user-event @types/jest @types/node @types/react @types/react-dom @typescript-eslint/eslint-plugin @typescript-eslint/parser constructs eslint-config-prettier eslint-import-resolver-typescript eslint-plugin-import eslint-plugin-prettier eslint prettier projen typescript react react-dom react-scripts web-vitals"
+          "exec": "yarn upgrade @angular-devkit/build-angular @angular/cli @angular/compiler-cli @types/node @typescript-eslint/eslint-plugin @typescript-eslint/parser constructs eslint-import-resolver-typescript eslint-plugin-import eslint projen @angular/animations @angular/common @angular/compiler @angular/core @angular/forms @angular/platform-browser-dynamic @angular/platform-browser @angular/router tslib"
         },
         {
           "exec": "npx projen"
