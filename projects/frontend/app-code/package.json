@@ -1,5 +1,5 @@
 {
-  "name": "Frontend",
+  "name": "frontend",
   "scripts": {
     "build": "npx projen build",
     "compile": "npx projen compile",

@@ -16,7 +16,7 @@ root.package.addField('prettier', {
 });
 
 new python.PythonProject({
-  name: 'Backend',
+  name: 'backend',
   moduleName: 'backend',
   authorName: 'Jholdy Damasceno',
   authorEmail: 'jholdydamasceno@gmail.com',
@@ -26,7 +26,7 @@ new python.PythonProject({
 });
 
 new Frontend({
-  name: 'Frontend',
+  name: 'frontend',
   outdir: './projects/frontend/app-code',
   parent: root,
   defaultReleaseBranch: 'main',
