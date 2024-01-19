@@ -77,8 +77,6 @@ export class Frontend extends TypeScriptAppProject {
       testdir: './src',
     });
 
-    //this.tryRemoveFile('tsconfig.dev.json');
-
     this.addTask('ng', { exec: 'ng', receiveArgs: true });
     this.addTask('start', { exec: 'ng serve', receiveArgs: true });
     this.tasks.tryFind('compile')?.reset('ng build', { receiveArgs: true });
@@ -130,8 +128,6 @@ export class Frontend extends TypeScriptAppProject {
         include: ['src/**/*.d.ts'],
       },
     });
-
-    // create prettier config
 
     new JsonFile(this, '.prettierrc.json', {
       obj: {
