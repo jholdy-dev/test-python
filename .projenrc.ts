@@ -1,5 +1,5 @@
-import { typescript, python } from 'projen';
-import { Frontend } from './projenrc/Frontend';
+import { typescript } from 'projen';
+import { Backend, Frontend, Iac } from './projenrc';
 
 const root = new typescript.TypeScriptProject({
   authorName: 'Jholdy Damasceno',
@@ -15,7 +15,18 @@ root.package.addField('prettier', {
   trailingComma: 'es5',
 });
 
-new python.PythonProject({
+new Iac({
+  name: 'iac',
+  cdkVersion: '2.1.0',
+  outdir: './projects/iac',
+  authorName: 'Jholdy Damasceno',
+  authorEmail: 'jholdydamasceno@gmail.com',
+  defaultReleaseBranch: 'main',
+  parent: root,
+  testdir: './src',
+});
+
+new Backend({
   name: 'backend',
   moduleName: 'backend',
   authorName: 'Jholdy Damasceno',
