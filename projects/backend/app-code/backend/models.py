@@ -9,6 +9,20 @@ class Car(db.Model, SerializerMixin):
     model = db.Column(db.String(140))
     photo = db.Column(db.String(140))
 
+    def save(self):
+        db.session.add(self)
+        db.session.commit()
+        return self
+
+    def delete(self):
+        db.session.delete(self)
+        return self
+
+    def update(self, **kwargs):
+        for key, value in kwargs.items():
+            setattr(self, key, value)
+        return self
+
 
 class User(db.Model, SerializerMixin):
     id = db.Column(db.Integer, primary_key=True)

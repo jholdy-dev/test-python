@@ -16,12 +16,48 @@ export class Backend extends PythonProject {
       pytest: false,
     });
 
+    const env = {
+      FLASK_APP: 'backend.app:create_app',
+    };
+
     this.addTask('start', {
-      exec: 'python -m backend',
+      env,
+      exec: 'flask run --debugger --reload',
     });
 
     this.addTask('init:config', {
+      env,
       exec: 'dynaconf init -f toml',
+    });
+
+    this.addTask('init:migrate', {
+      env,
+      exec: 'flask db init',
+    });
+
+    this.addTask('migrate', {
+      env,
+      exec: 'flask db migrate',
+    });
+
+    this.addTask('create:db', {
+      env,
+      exec: 'flask createdb',
+    });
+
+    this.addTask('drop:db', {
+      env,
+      exec: 'flask dropdb',
+    });
+
+    this.addTask('populate:db', {
+      env,
+      exec: 'flask populatedb',
+    });
+
+    this.addTask('flask:help', {
+      env,
+      exec: 'flask --help',
     });
 
     this.gitignore.exclude('.secrets.*');

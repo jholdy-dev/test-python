@@ -25,6 +25,17 @@
       "name": "compile",
       "description": "Only compile"
     },
+    "create:db": {
+      "name": "create:db",
+      "env": {
+        "FLASK_APP": "backend.app:create_app"
+      },
+      "steps": [
+        {
+          "exec": "flask createdb"
+        }
+      ]
+    },
     "default": {
       "name": "default",
       "description": "Synthesize project files",
@@ -35,11 +46,47 @@
         }
       ]
     },
+    "drop:db": {
+      "name": "drop:db",
+      "env": {
+        "FLASK_APP": "backend.app:create_app"
+      },
+      "steps": [
+        {
+          "exec": "flask dropdb"
+        }
+      ]
+    },
+    "flask:help": {
+      "name": "flask:help",
+      "env": {
+        "FLASK_APP": "backend.app:create_app"
+      },
+      "steps": [
+        {
+          "exec": "flask --help"
+        }
+      ]
+    },
     "init:config": {
       "name": "init:config",
+      "env": {
+        "FLASK_APP": "backend.app:create_app"
+      },
       "steps": [
         {
           "exec": "dynaconf init -f toml"
+        }
+      ]
+    },
+    "init:migrate": {
+      "name": "init:migrate",
+      "env": {
+        "FLASK_APP": "backend.app:create_app"
+      },
+      "steps": [
+        {
+          "exec": "flask db init"
         }
       ]
     },
@@ -58,9 +105,31 @@
         }
       ]
     },
+    "migrate": {
+      "name": "migrate",
+      "env": {
+        "FLASK_APP": "backend.app:create_app"
+      },
+      "steps": [
+        {
+          "exec": "flask db migrate"
+        }
+      ]
+    },
     "package": {
       "name": "package",
       "description": "Creates the distribution package"
+    },
+    "populate:db": {
+      "name": "populate:db",
+      "env": {
+        "FLASK_APP": "backend.app:create_app"
+      },
+      "steps": [
+        {
+          "exec": "flask populatedb"
+        }
+      ]
     },
     "post-compile": {
       "name": "post-compile",
@@ -72,9 +141,12 @@
     },
     "start": {
       "name": "start",
+      "env": {
+        "FLASK_APP": "backend.app:create_app"
+      },
       "steps": [
         {
-          "exec": "python -m backend"
+          "exec": "flask run --debugger --reload"
         }
       ]
     },
