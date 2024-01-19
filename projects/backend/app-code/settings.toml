@@ -1,0 +1,11 @@
+[default]
+
+DEBUG = false
+SQLALCHEMY_DATABASE_URI = 'sqlite:///development.db'
+SECRET_KEY = "backend_test_1234536"
+EXTENSIONS = [
+  "backend.ext.database:init_app",
+  "backend.ext.configuration:init_app",
+  "backend.ext.auth:init_app",
+  "backend.blueprints.restapi:init_app",
+]

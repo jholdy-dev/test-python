@@ -35,6 +35,14 @@
         }
       ]
     },
+    "init:config": {
+      "name": "init:config",
+      "steps": [
+        {
+          "exec": "dynaconf init -f toml"
+        }
+      ]
+    },
     "install": {
       "name": "install",
       "description": "Install and upgrade dependencies",
@@ -62,14 +70,17 @@
       "name": "pre-compile",
       "description": "Prepare the project for compilation"
     },
-    "test": {
-      "name": "test",
-      "description": "Run tests",
+    "start": {
+      "name": "start",
       "steps": [
         {
-          "exec": "pytest"
+          "exec": "python -m backend"
         }
       ]
+    },
+    "test": {
+      "name": "test",
+      "description": "Run tests"
     }
   },
   "env": {
